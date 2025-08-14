@@ -7,43 +7,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --cyan:#39cef9;
-      --paper:#daf1bc;
-      --white:#ffffff;
-      --text:#2f3e2f;
-      --nb:#fffde6;
+      --cyan:#39cef9;       /* תכלת לכותרות וכפתור */
+      --paper:#daf1bc;      /* רקע הדף */
+      --white:#ffffff;      /* לבן */
+      --text:#2f3e2f;       /* טקסט ראשי */
+      --nb:#fffde6;         /* נ.ב בהיר מאוד */
     }
     *{box-sizing:border-box}
     body{font-family:'Rubik', Arial, sans-serif;margin:0;background:var(--paper);color:var(--text);line-height:1.75}
 
-    .hero{
-      background:url('https://i.imgur.com/6zEyL8i.jpeg') center center/contain no-repeat;
-      width:100%;
-      height:auto;
-      text-align:center;
-    }
-    .hero img{
-      display:block;
-      width:100%;
-      height:auto;
-    }
+    /* תמונת פתיח מלאה בלי חיתוך */
+    .hero{margin:0}
+    .hero img{display:block;width:100%;height:auto}
 
     main{max-width:980px;margin:auto;padding:16px}
 
-    h2{font-weight:300;color:var(--cyan);border-bottom:2px solid var(--cyan);padding-bottom:.35rem;margin:1.2rem 0 .9rem;text-align:right}
-
+    /* כותרות בתוך המסגרות בלבד */
     .card{background:var(--white);border-radius:12px;padding:16px 18px;text-align:right}
+    .card .title{font-weight:400; /* Rubik Regular */
+                 color:var(--cyan);border-bottom:2px solid var(--cyan);
+                 padding-bottom:.35rem;margin:0 0 .9rem 0;text-align:right}
 
+    /* טקסטים במסגרות דקים יותר כדי שהתיוגים יבלטו */
+    .card p{margin:.4rem 0;font-weight:300}
+    .label{font-weight:400} /* Rubik Regular, עבה יותר מהטקסט */
+
+    /* נ.ב עם הדגשת התיוג */
     .note{background:var(--nb);border-radius:10px;padding:12px 14px;margin-top:10px;text-align:right}
+    .note .label{font-weight:400}
 
-    .paybox{display:block;background:var(--cyan);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:400;margin:14px auto 0 auto;text-align:center;width:fit-content}
+    /* כפתור במרכז המסגרת, תכלת מלא, טקסט לבן, Rubik Regular */
+    .paybox{display:block;background:var(--cyan);color:#fff;padding:12px 20px;border-radius:10px;
+            text-decoration:none;font-weight:400;margin:14px auto 0 auto;text-align:center;width:max-content}
 
+    /* האיור ברוחב מלא של אזור התוכן */
     .illustration{width:100%;height:auto;display:block;margin:14px 0;border-radius:10px}
 
     .fullwidth{width:100%;height:auto;display:block;border-radius:12px;margin:16px 0}
   </style>
 </head>
 <body>
+  <!-- תמונת פתיח בראש העמוד, מלאה ברוחב וללא חיתוך -->
   <header class="hero">
     <img src="https://i.imgur.com/6zEyL8i.jpeg" alt="תמונה ראשית">
   </header>
@@ -51,29 +55,32 @@
   <main>
     <section>
       <div class="card">
-        <h2>מתי, איפה, כמה, למה</h2>
-        <p>שבת, 20.9 – החל מהשקיעה</p>
-        <p>"מצפה הפיטאיה", מושב גבעת יואב (דרום רמת הגולן).</p>
-        <p>מה מחכה לכם: מוזיקה מעולה, אלכוהול, עגלת אוכל, וריקודים עד אחרון השיכורים</p>
-        <p>קוד לבוש: ג'ינס וטי גזורה</p>
-        <p>קוד מנטלי: אופטימיות חסרת מעצורים</p>
-        <div class="note">נ.ב: במקום יש מזרונים, אוהלים, שירותים, מקלחות ומטבח – אפשר להישאר לישון, ולהתעורר במקום הכי יפה בעולם.</div>
+        <h2 class="title">מתי, איפה, כמה, למה</h2>
+        <p><span class="label">מתי:</span> שבת, 20.9 – החל מהשקיעה</p>
+        <p><span class="label">איפה:</span> "מצפה הפיטאיה", מושב גבעת יואב (דרום רמת הגולן).</p>
+        <p><span class="label">מה מחכה לכם:</span> מוזיקה מעולה, אלכוהול, עגלת אוכל, וריקודים עד אחרון השיכורים</p>
+        <p><span class="label">קוד לבוש:</span> ג'ינס וטי גזורה</p>
+        <p><span class="label">קוד מנטלי:</span> אופטימיות חסרת מעצורים</p>
+        <div class="note"><span class="label">נ.ב:</span> במקום יש מזרונים, אוהלים, שירותים, מקלחות ומטבח – אפשר להישאר לישון, ולהתעורר במקום הכי יפה בעולם.</div>
         <a class="paybox" href="https://links.payboxapp.com/LHsuIsA5LVb" target="_blank" rel="noopener">להצטרפות למסיבה - 100 ש"ח</a>
       </div>
     </section>
 
-    <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
+    <!-- איור לפני הסיפור -->
+    <img class="illustration" src="https://i.imgur.com/KQ0vefE.png" alt="איור קישוטי">
 
     <section>
       <div class="card">
-        <h2>למה בגולן</h2>
+        <h2 class="title">למה בגולן</h2>
         <p>לפני יותר מ־30 שנה, בקיבוץ מיצר שבדרום רמת הגולן היה פאב בשם "אחותך". היו שם ערבי ריקודים. הגיעו אנשים מכל האזור, כולם בג'ינס קרוע וחולצת טריקו גזורה. אלה היו ימים של חופש למרות שעמדנו להתגייס והעתיד היה נראה פתוח ויפה.</p>
         <p>נכון, נוסטלגיה זה רגש ערמומי, אבל תאמינו לי אם אגיד לכם שאלה היו ערבים קסומים ושבימים לא פשוטים אלה אני רוצה לשחזר אותם ולחלוק עם כל מי שאני אוהבת. ב־20/9 אהיה בת 50 ויש לי חלום — לרקוד עוד פעם אחת כמו אז במיצר, ב"אחותך": עם האנשים מאז, עם אנשים מהיום, והכי־הכי עם תחושת החופש והאופטימיות של רמת הגולן, שנות ה־90, השלום בפתח ואנחנו רוקדים.</p>
       </div>
     </section>
 
-    <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
+    <!-- איור אחרי הסיפור -->
+    <img class="illustration" src="https://i.imgur.com/KQ0vefE.png" alt="איור קישוטי">
 
+    <!-- תמונה מסכמת בתחתית -->
     <img class="fullwidth" src="https://i.imgur.com/PUcgfoe.jpeg" alt="תמונה מסכמת" />
   </main>
 </body>
