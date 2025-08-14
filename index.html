@@ -1,118 +1,85 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>הזמנה למסיבה</title>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Rubik', sans-serif;
-    background-color: #fffbe6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  .header {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  .header img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .header-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  .header-text h1 {
-    font-weight: 300;
-    font-size: 2.5em;
-    margin: 0;
-  }
-  .header-text h2 {
-    font-weight: 300;
-    font-size: 1.6em;
-    margin-top: 10px;
-  }
-  section {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  h3 {
-    font-weight: 300;
-    color: #39cef9;
-  }
-  .note {
-    background-color: #fffce8;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  .button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #fff;
-    color: #39cef9;
-    border: 2px solid #39cef9;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 300;
-    margin-top: 20px;
-  }
-  .illustration {
-    display: block;
-    margin: 20px auto;
-    max-width: 200px;
-  }
-  .full-width-img {
-    width: 100%;
-    display: block;
-    margin-top: 20px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>נופר חוגגת 50 – הזמנה</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cyan:#39cef9;       /* תכלת לכותרות ולכפתור */
+      --paper:#daf1bc;      /* רקע הדף – לפי הבקשה */
+      --white:#ffffff;      /* לבן */
+      --text:#2f3e2f;       /* טקסט ראשי */
+      --nb:#fffde6;         /* נ.ב בהיר מאוד */
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Rubik', Arial, sans-serif;margin:0;background:var(--paper);color:var(--text);line-height:1.75}
+
+    /* Hero with background image */
+    .hero{background:url('https://i.imgur.com/56ngHwW.jpeg') center/cover no-repeat;color:#fff;text-align:center;padding:56px 16px}
+    .hero h1{margin:0;font-weight:300;font-size:clamp(2.8rem,7vw,4.6rem)}
+
+    /* NEW: lead line outside the image */
+    .lead{max-width:980px;margin:10px auto 12px;padding:0 16px;color:var(--cyan);font-weight:700; /* BOLD */
+          font-size:clamp(1.1rem,2.4vw,1.4rem);text-align:right}
+
+    main{max-width:980px;margin:auto;padding:16px}
+
+    h2{font-weight:300;color:var(--cyan);border-bottom:2px solid var(--cyan);padding-bottom:.35rem;margin:1.2rem 0 .9rem;text-align:right}
+
+    /* Cards without outlines; inner is white */
+    .card{background:var(--white);border-radius:12px;padding:16px 18px;text-align:right}
+
+    /* NB box — very light yellow, just a touch darker than page */
+    .note{background:var(--nb);border-radius:10px;padding:12px 14px;margin-top:10px;text-align:right}
+
+    /* Button: full cyan, white text, no border */
+    .paybox{display:inline-block;background:var(--cyan);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:300;margin-top:14px}
+
+    /* Illustration: full width of card */
+    .illustration{width:100%;height:auto;display:block;margin:14px 0;border-radius:10px}
+
+    .fullwidth{width:100%;height:auto;display:block;border-radius:12px;margin:16px 0}
+  </style>
 </head>
 <body>
-  <div class="header">
-    <img src="https://i.imgur.com/ZJgSZ9v.jpeg" alt="Header Image">
-    <div class="header-text">
-      <h1 style="font-size: 160%;">נופר חוגגת 50</h1>
-      <h2>אלכוהול, די-ג'יי פגז, עגלת אוכל, ריקודים, ומצב רוח של הכל טוב.</h2>
-    </div>
-  </div>
+  <header class="hero">
+    <h1>נופר חוגגת 50</h1>
+  </header>
 
-  <section>
-    <h3>מתי, איפה, כמה, למה</h3>
-    <p>שבת, 20.9 – החל מהשקיעה<br>
-    "מצפה הפיטאיה", מושב גבעת יואב (דרום רמת הגולן).<br>
-    מה מחכה לכם: מוזיקה מעולה, אלכוהול, עגלת אוכל, וריקודים עד אחרון השיכורים<br>
-    קוד לבוש: ג'ינס וטי גזורה<br>
-    קוד מנטלי: אופטימיות חסרת מעצורים</p>
+  <!-- Lead line moved outside the image, bold & cyan -->
+  <div class="lead">אלכוהול, די-ג'יי פגז, עגלת אוכל, ריקודים, ומצב רוח של הכל טוב.</div>
 
-    <div class="note">
-      נ.ב: במקום יש מזרונים, אוהלים, שירותים, מקלחות ומטבח – אפשר להישאר לישון, ולהתעורר במקום הכי יפה בעולם.
-    </div>
+  <main>
+    <section>
+      <h2>מתי, איפה, כמה, למה</h2>
+      <div class="card">
+        <p>שבת, 20.9 – החל מהשקיעה</p>
+        <p>"מצפה הפיטאיה", מושב גבעת יואב (דרום רמת הגולן).</p>
+        <p>מה מחכה לכם: מוזיקה מעולה, אלכוהול, עגלת אוכל, וריקודים עד אחרון השיכורים</p>
+        <p>קוד לבוש: ג'ינס וטי גזורה</p>
+        <p>קוד מנטלי: אופטימיות חסרת מעצורים</p>
+        <div class="note">נ.ב: במקום יש מזרונים, אוהלים, שירותים, מקלחות ומטבח – אפשר להישאר לישון, ולהתעורר במקום הכי יפה בעולם.</div>
+        <a class="paybox" href="https://links.payboxapp.com/LHsuIsA5LVb" target="_blank" rel="noopener">להצטרפות למסיבה - 100 ש"ח</a>
+      </div>
+    </section>
 
-    <a href="https://payboxapp.page.link/join-party" class="button">להצטרפות למסיבה - 100 ש"ח</a>
-  </section>
+    <!-- Illustration full width inside card context (above and below 'למה בגולן') -->
+    <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
 
-  <img src="https://imgur.com/JIpsPNW.png" alt="Illustration" class="illustration">
+    <section>
+      <h2>למה בגולן</h2>
+      <div class="card">
+        <p>לפני יותר מ־30 שנה, בקיבוץ מיצר שבדרום רמת הגולן היה פאב בשם "אחותך". היו שם ערבי ריקודים. הגיעו אנשים מכל האזור, כולם בג'ינס קרוע וחולצת טריקו גזורה. אלה היו ימים של חופש למרות שעמדנו להתגייס והעתיד היה נראה פתוח ויפה.</p>
+        <p>נכון, נוסטלגיה זה רגש ערמומי, אבל תאמינו לי אם אגיד לכם שאלה היו ערבים קסומים ושבימים לא פשוטים אלה אני רוצה לשחזר אותם ולחלוק עם כל מי שאני אוהבת. ב־20/9 אהיה בת 50 ויש לי חלום — לרקוד עוד פעם אחת כמו אז במיצר, ב"אחותך": עם האנשים מאז, עם אנשים מהיום, והכי־הכי עם תחושת החופש והאופטימיות של רמת הגולן, שנות ה־90, השלום בפתח ואנחנו רוקדים.</p>
+      </div>
+    </section>
 
-  <section>
-    <h3>למה בגולן</h3>
-    <p>לפני יותר מ־30 שנה, בקיבוץ מיצר שבדרום רמת הגולן היה פאב בשם "אחותך". היו שם ערבי ריקודים. הגיעו אנשים מכל האזור, כולם בג'ינס קרוע וחולצת טריקו גזורה. אלה היו ימים של חופש למרות שעמדנו להתגייס והעתיד היה נראה פתוח ויפה.<br>
-    נכון, נוסטלגיה זה רגש ערמומי, אבל תאמינו לי אם אגיד לכם שאלה היו ערבים קסומים ושבימים לא פשוטים אלה אני רוצה לשחזר אותם ולחלוק עם כל מי שאני אוהבת. ב־20/9 אהיה בת 50 ויש לי חלום — לרקוד עוד פעם אחת כמו אז במיצר, ב"אחותך": עם האנשים מאז, עם אנשים מהיום, והכי־הכי עם תחושת החופש והאופטימיות של רמת הגולן, שנות ה־90, השלום בפתח ואנחנו רוקדים.</p>
-  </section>
+    <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
 
-  <img src="https://imgur.com/JIpsPNW.png" alt="Illustration" class="illustration">
-
-  <img src="https://imgur.com/PUcgfoe.jpeg" alt="Party Image" class="full-width-img">
+    <!-- Final image at the bottom (unchanged source from earlier instructions or keep empty if not needed) -->
+    <img class="fullwidth" src="https://i.imgur.com/PUcgfoe.jpeg" alt="תמונה מסכמת" />
+  </main>
 </body>
 </html>
