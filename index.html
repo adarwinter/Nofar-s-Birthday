@@ -7,37 +7,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --cyan:#39cef9;       /* תכלת לכותרות ולכפתור */
-      --paper:#daf1bc;      /* רקע הדף – לפי הבקשה */
-      --white:#ffffff;      /* לבן */
-      --text:#2f3e2f;       /* טקסט ראשי */
-      --nb:#fffde6;         /* נ.ב בהיר מאוד */
+      --cyan:#39cef9;
+      --paper:#daf1bc;
+      --white:#ffffff;
+      --text:#2f3e2f;
+      --nb:#fffde6;
     }
     *{box-sizing:border-box}
     body{font-family:'Rubik', Arial, sans-serif;margin:0;background:var(--paper);color:var(--text);line-height:1.75}
 
-    /* Hero with background image */
-    .hero{background:url('https://i.imgur.com/56ngHwW.jpeg') center/cover no-repeat;color:#fff;text-align:center;padding:56px 16px}
-    .hero h1{margin:0;font-weight:300;font-size:clamp(2.8rem,7vw,4.6rem)}
-
-    /* NEW: lead line outside the image */
-    .lead{max-width:980px;margin:10px auto 12px;padding:0 16px;color:var(--cyan);font-weight:700; /* BOLD */
-          font-size:clamp(1.1rem,2.4vw,1.4rem);text-align:right}
+    .hero{
+      background:url('https://i.imgur.com/6zEyL8i.jpeg') center center/contain no-repeat;
+      width:100%;
+      height:auto;
+      text-align:center;
+    }
+    .hero img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
 
     main{max-width:980px;margin:auto;padding:16px}
 
     h2{font-weight:300;color:var(--cyan);border-bottom:2px solid var(--cyan);padding-bottom:.35rem;margin:1.2rem 0 .9rem;text-align:right}
 
-    /* Cards without outlines; inner is white */
     .card{background:var(--white);border-radius:12px;padding:16px 18px;text-align:right}
 
-    /* NB box — very light yellow, just a touch darker than page */
     .note{background:var(--nb);border-radius:10px;padding:12px 14px;margin-top:10px;text-align:right}
 
-    /* Button: full cyan, white text, no border */
-    .paybox{display:inline-block;background:var(--cyan);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:300;margin-top:14px}
+    .paybox{display:block;background:var(--cyan);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:400;margin:14px auto 0 auto;text-align:center;width:fit-content}
 
-    /* Illustration: full width of card */
     .illustration{width:100%;height:auto;display:block;margin:14px 0;border-radius:10px}
 
     .fullwidth{width:100%;height:auto;display:block;border-radius:12px;margin:16px 0}
@@ -45,16 +45,13 @@
 </head>
 <body>
   <header class="hero">
-    <h1>נופר חוגגת 50</h1>
+    <img src="https://i.imgur.com/6zEyL8i.jpeg" alt="תמונה ראשית">
   </header>
-
-  <!-- Lead line moved outside the image, bold & cyan -->
-  <div class="lead">אלכוהול, די-ג'יי פגז, עגלת אוכל, ריקודים, ומצב רוח של הכל טוב.</div>
 
   <main>
     <section>
-      <h2>מתי, איפה, כמה, למה</h2>
       <div class="card">
+        <h2>מתי, איפה, כמה, למה</h2>
         <p>שבת, 20.9 – החל מהשקיעה</p>
         <p>"מצפה הפיטאיה", מושב גבעת יואב (דרום רמת הגולן).</p>
         <p>מה מחכה לכם: מוזיקה מעולה, אלכוהול, עגלת אוכל, וריקודים עד אחרון השיכורים</p>
@@ -65,12 +62,11 @@
       </div>
     </section>
 
-    <!-- Illustration full width inside card context (above and below 'למה בגולן') -->
     <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
 
     <section>
-      <h2>למה בגולן</h2>
       <div class="card">
+        <h2>למה בגולן</h2>
         <p>לפני יותר מ־30 שנה, בקיבוץ מיצר שבדרום רמת הגולן היה פאב בשם "אחותך". היו שם ערבי ריקודים. הגיעו אנשים מכל האזור, כולם בג'ינס קרוע וחולצת טריקו גזורה. אלה היו ימים של חופש למרות שעמדנו להתגייס והעתיד היה נראה פתוח ויפה.</p>
         <p>נכון, נוסטלגיה זה רגש ערמומי, אבל תאמינו לי אם אגיד לכם שאלה היו ערבים קסומים ושבימים לא פשוטים אלה אני רוצה לשחזר אותם ולחלוק עם כל מי שאני אוהבת. ב־20/9 אהיה בת 50 ויש לי חלום — לרקוד עוד פעם אחת כמו אז במיצר, ב"אחותך": עם האנשים מאז, עם אנשים מהיום, והכי־הכי עם תחושת החופש והאופטימיות של רמת הגולן, שנות ה־90, השלום בפתח ואנחנו רוקדים.</p>
       </div>
@@ -78,7 +74,6 @@
 
     <img class="illustration" src="https://i.imgur.com/JIpsPNW.png" alt="איור קישוטי">
 
-    <!-- Final image at the bottom (unchanged source from earlier instructions or keep empty if not needed) -->
     <img class="fullwidth" src="https://i.imgur.com/PUcgfoe.jpeg" alt="תמונה מסכמת" />
   </main>
 </body>
